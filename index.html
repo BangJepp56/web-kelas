@@ -10,11 +10,15 @@
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
     <!-- Header Section -->
     <header>
         <div class="header-content">
@@ -41,7 +45,7 @@
     <section id="home" class="hero">
         <h2>Class GSI 68A</h2>
         <p>"Dokumentasi biar ingat kalau pernah 1 tempat kursus."</p>
-        <div class="hero-location">
+        <div data-aos="fade-up"class="hero-location">
             <i class="fas fa-map-marker-alt"></i>
             <span>Palcomtech Baturaja</span>
         </div>
@@ -50,8 +54,8 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2>Galeri</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
+        <div data-aos="fade-right" class="gallery-grid">
+            <div data-aos="fade-right"class="gallery-item">
                 <img src="img/4.jpg" alt="Praktikum di Lab">
                 <div class="caption">Praktikum di Lab Komputer</div>
             </div>
@@ -78,18 +82,18 @@
     <!-- About Section -->
     <section id="about" class="about">
         <h2>Tentang Kami</h2>
-        <div class="about-content">
-            <div class="about-text">
+        <div data-aos="fade-right" class="about-content">
+            <div data-aos="fade-right" class="about-text">
                 <p>Kami adalah mahasiswa GSI 68A di Palcomtech Baturaja, sekelompok manusia super kreatif yang kadang ngoding, kadang ngoding lagi. Dengan semangat 45 (dan sedikit paksaan deadline), kami terus mengukir pengalaman seru di dunia teknologi informasi. Intinya, belajar sambil bercanda, tapi tetap coding jalan, nilai aman!</p>
                 
-                <div class="campus-info">
+                <div data-aos="fade-right" class="campus-info">
                     <h3>Lokasi Kampus</h3>
                     <p><i class="fas fa-building"></i> Palcomtech Baturaja</p>
                     <p><i class="fas fa-map-marked-alt"></i> Jl. Sultan Syahrir no 252., Kec. Baturaja Timur., Kabupaten Ogan Komering Ulu, Sumatera Selatan 32121</p>
                 </div>
             </div>
             
-            <div class="activities">
+            <div data-aos="fade-right" class="activities">
                 <h3>Kegiatan Utama</h3>
                 <ul>
                     <li>
@@ -116,7 +120,7 @@
     <!-- Student Profiles Section -->
 <section id="profiles" class="profiles">
     <h2>Profil Siswa</h2>
-    <div class="profiles-container">
+    <div data-aos="fade-right" class="profiles-container">
       <!-- Jefri -->
         <div class="profile-item">
             <img src="img/profile/Jepp.jpg" alt="Foto Siswa">
@@ -181,7 +185,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Hubungi Kami</h2>
-        <div class="social-links">
+        <div data-aos="fade-right" class="social-links">
             <a href="https://instagram.com/class_gsi68a" target="_blank" class="social-link">
                 <i class="fab fa-instagram"></i>
                 <span>@class_gsi68a</span>
