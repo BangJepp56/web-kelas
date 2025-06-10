@@ -4,217 +4,476 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSI 68A - Palcomtech Baturaja</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
     <!-- Font Awesome & Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>GSI 68A</h2>
+            <p>Loading...</p>
+        </div>
+    </div>
+
     <!-- Header Section -->
-    <header>
+    <header class="header">
         <div class="header-content">
             <div class="logo">
-                <i class="fas fa-globe"></i>
-                <h1>GSI 68A</h1>
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>GSI 68A</h1>
+                    <span>Palcomtech</span>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#gallery">Galeri</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#profiles">Profile Siswa</a></li>
-                    <li><a href="#contact">Kontak</a></li>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#gallery" class="nav-link">Galeri</a></li>
+                    <li><a href="#about" class="nav-link">Tentang</a></li>
+                    <li><a href="#profiles" class="nav-link">Profil</a></li>
+                    <li><a href="#comments" class="nav-link">Komentar</a></li>
+                    <li><a href="#contact" class="nav-link">Kontak</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h2>Class GSI 68A</h2>
-        <p>"Dokumentasi biar ingat kalau pernah 1 tempat kursus."</p>
-        <div data-aos="fade-up"class="hero-location">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Palcomtech Baturaja</span>
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1 class="hero-title">Class GSI 68A</h1>
+                <p class="hero-subtitle">"Dokumentasi biar ingat kalau pernah 1 tempat kursus."</p>
+                <div class="hero-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Palcomtech Baturaja</span>
+                </div>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Siswa Aktif</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Kegiatan</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2025</h3>
+                    <p>Tahun Aktif</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
-        <h2>Galeri</h2>
-        <div data-aos="fade-right" class="gallery-grid">
-            <div data-aos="fade-right"class="gallery-item">
-                <img src="img/4.jpg" alt="Praktikum di Lab">
-                <div class="caption">Praktikum di Lab Komputer</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/3.jpg" alt="Kelas Teori">
-                <div class="caption">Quiz Kahoot</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/5.jpg" alt="Presentasi Kelompok">
-                <div class="caption">Jumat Berkah</div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Galeri Kegiatan</h2>
+                <p class="section-subtitle">Dokumentasi perjalanan belajar kami</p>
             </div>
             
-            <div class="gallery-item">
-                <img src="img/2.jpg" alt="Diskusi Kelompok">
-                <div class="caption">Kunjungan</div>
+            <!-- Upload Form -->
+            <div class="upload-section" data-aos="fade-up">
+                <div class="upload-card">
+                    <h3>Tambah Foto Baru</h3>
+                    <form id="upload-form" class="upload-form">
+                        <div class="form-group">
+                            <label for="image-upload" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Pilih Gambar</span>
+                                <input type="file" id="image-upload" accept="image/*" required>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="image-caption" placeholder="Deskripsi foto..." required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-upload"></i>
+                            Upload Foto
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="img/1.jpg" alt="Foto Bersama">
-                <div class="caption">Kunjungan Ke PDAM Baturaja</div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/7.jpg" alt="Foto Bersama">
-                <div class="caption">Kunjungan industri</div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Default images -->
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="img/4.jpg" alt="Praktikum di Lab">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Praktikum di Lab Komputer</h4>
+                            <p>Sesi praktikum programming</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/3.jpg" alt="Quiz Kahoot">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Quiz Kahoot</h4>
+                            <p>Sesi quiz interaktif</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/5.jpg" alt="Jumat Berkah">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Jumat Berkah</h4>
+                            <p>Kegiatan sosial mingguan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/2.jpg" alt="Kunjungan">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Kunjungan</h4>
+                            <p>Kunjungan edukatif</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="img/1.jpg" alt="PDAM Baturaja">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Kunjungan Ke PDAM Baturaja</h4>
+                            <p>Studi lapangan industri</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="img/7.jpg" alt="Kunjungan Industri">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h4>Kunjungan Industri</h4>
+                            <p>Eksplorasi dunia kerja</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>Tentang Kami</h2>
-        <div data-aos="fade-right" class="about-content">
-            <div data-aos="fade-right" class="about-text">
-                <p>Kami adalah mahasiswa GSI 68A di Palcomtech Baturaja, sekelompok manusia super kreatif yang kadang ngoding, kadang ngoding lagi. Dengan semangat 45 (dan sedikit paksaan deadline), kami terus mengukir pengalaman seru di dunia teknologi informasi. Intinya, belajar sambil bercanda, tapi tetap coding jalan, nilai aman!</p>
-                
-                <div data-aos="fade-right" class="campus-info">
-                    <h3>Lokasi Kampus</h3>
-                    <p><i class="fas fa-building"></i> Palcomtech Baturaja</p>
-                    <p><i class="fas fa-map-marked-alt"></i> Jl. Sultan Syahrir no 252., Kec. Baturaja Timur., Kabupaten Ogan Komering Ulu, Sumatera Selatan 32121</p>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <div class="section-header">
+                        <h2 class="section-title">Tentang Kami</h2>
+                        <p class="section-subtitle">Mengenal lebih dekat GSI 68A</p>
+                    </div>
+                    <p class="about-description">
+                        Kami adalah mahasiswa GSI 68A di Palcomtech Baturaja, sekelompok manusia super kreatif yang kadang ngoding, kadang ngoding lagi. Dengan semangat 45 (dan sedikit paksaan deadline), kami terus mengukir pengalaman seru di dunia teknologi informasi. Intinya, belajar sambil bercanda, tapi tetap coding jalan, nilai aman!
+                    </p>
+                    
+                    <div class="campus-info">
+                        <h3><i class="fas fa-building"></i> Lokasi Kampus</h3>
+                        <div class="info-item">
+                            <i class="fas fa-university"></i>
+                            <span>Palcomtech Baturaja</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Jl. Sultan Syahrir no 252., Kec. Baturaja Timur., Kabupaten Ogan Komering Ulu, Sumatera Selatan 32121</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div data-aos="fade-right" class="activities">
-                <h3>Kegiatan Utama</h3>
-                <ul>
-                    <li>
-                        <i class="fas fa-laptop-code"></i>
-                        Pembelajaran di Lab Komputer
-                    </li>
-                    <li>
-                        <i class="fas fa-code"></i>
-                        Praktikum Software Development
-                    </li>
-                    <li>
-                        <i class="fas fa-building"></i>
-                        Kunjungan Industri
-                    </li>
-                    <li>
-                        <i class="fas fa-users"></i>
-                        Studi Kasus Bersama
-                    </li>
-                </ul>
+                
+                <div class="activities" data-aos="fade-left">
+                    <h3><i class="fas fa-tasks"></i> Kegiatan Utama</h3>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Lab Komputer</h4>
+                                <p>Pembelajaran praktis di laboratorium</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Software Development</h4>
+                                <p>Praktikum pengembangan aplikasi</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Kunjungan Industri</h4>
+                                <p>Eksplorasi dunia kerja nyata</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Studi Kasus</h4>
+                                <p>Diskusi dan analisis bersama</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- Student Profiles Section -->
-<section id="profiles" class="profiles">
-    <h2>Profil Siswa</h2>
-    <div data-aos="fade-right" class="profiles-container">
-      <!-- Jefri -->
-        <div class="profile-item">
-            <img src="img/profile/Jepp.jpg" alt="Foto Siswa">
-            <div class="profile-info">
-                <h3>M Jefri Agiansyah</h3>
-                <p>Insyaallah Web Developer,Mobile Developer,Fullstak Developer</p>
-                <a href="https://instagram.com/jepp_aee" target="_blank" class="social-link">
-                    <i class="fab fa-instagram"></i> FOLLOW ME
-                </a>
+    <section id="profiles" class="profiles">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Profil Siswa</h2>
+                <p class="section-subtitle">Tim kreatif di balik GSI 68A</p>
+            </div>
+            
+            <div class="profiles-grid">
+                <div class="profile-card" data-aos="fade-up">
+                    <div class="profile-image">
+                        <img src="img/profile/Jepp.jpg" alt="M Jefri Agiansyah">
+                        <div class="profile-overlay">
+                            <a href="https://instagram.com/jepp_aee" target="_blank" class="profile-social">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-content">
+                        <h3>M Jefri Agiansyah</h3>
+                        <p class="profile-role">Full Stack Developer</p>
+                        <p class="profile-quote">Insyaallah Web Developer, Mobile Developer, Fullstack Developer</p>
+                    </div>
+                </div>
+                
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-image">
+                        <img src="img/profile/sindi.jpg" alt="Sindi Ulandari">
+                        <div class="profile-overlay">
+                            <a href="https://www.instagram.com/sindi_ulan80?igsh=anQyMXliczB4NTRt" target="_blank" class="profile-social">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-content">
+                        <h3>Sindi Ulandari</h3>
+                        <p class="profile-role">UI/UX Designer</p>
+                        <p class="profile-quote">Jangan pantang menyerah dan tetap lah berusaha karena kunci kesuksesan adalah percaya diri.</p>
+                    </div>
+                </div>
+                
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="profile-image">
+                        <img src="img/profile/intan.jpg" alt="Intan Nur'aini">
+                        <div class="profile-overlay">
+                            <a href="https://www.instagram.com/_hahaintann?igsh=emRxeXJiN29iajJx" target="_blank" class="profile-social">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-content">
+                        <h3>Intan Nur'aini</h3>
+                        <p class="profile-role">Frontend Developer</p>
+                        <p class="profile-quote">Orang bilang tidak bisa hidup tanpa cinta, menurut saya tidak punya duit itu berbahaya pake banget.</p>
+                    </div>
+                </div>
+                
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="profile-image">
+                        <img src="img/profile/selvi.jpg" alt="Shelvia Urbach">
+                        <div class="profile-overlay">
+                            <a href="https://www.instagram.com/s_sellviiaa" target="_blank" class="profile-social">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-content">
+                        <h3>Shelvia Urbach</h3>
+                        <p class="profile-role">Web Developer</p>
+                        <p class="profile-quote">Passionate about creating beautiful and functional web experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="profile-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="profile-image">
+                        <img src="img/profile/ranggis.jpeg" alt="Ranggis Viranda">
+                        <div class="profile-overlay">
+                            <a href="https://instagram.com/ranggisviranda" target="_blank" class="profile-social">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-content">
+                        <h3>Ranggis Viranda</h3>
+                        <p class="profile-role">Backend Developer</p>
+                        <p class="profile-quote">Setiap langkah yang kamu ambil adalah bagian dari cerita indah yang sedang kamu tulis.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="profile-item">
-            <img src="img/profile/sindi.jpg" alt="Foto Siswa">
-            <div class="profile-info">
-                <h3>Sindi Ulandari</h3>
-                <p>Jangan pantang menyerah dan tetap lah berusaha karena kunci kesuksesan adalah percaya diri.</p>
-                <a href="https://www.instagram.com/sindi_ulan80?igsh=anQyMXliczB4NTRt" target="_blank" class="social-link">
-                    <i class="fab fa-instagram"></i> FOLLOW ME
-                </a>
+    </section>
+
+    <!-- Comments Section -->
+    <section id="comments" class="comments">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Komentar & Pesan</h2>
+                <p class="section-subtitle">Bagikan kesan dan pesan Anda</p>
+            </div>
+            
+            <div class="comments-content">
+                <div class="comment-form-section" data-aos="fade-right">
+                    <div class="comment-form-card">
+                        <h3>Tulis Komentar</h3>
+                        <form id="comment-form" class="comment-form">
+                            <div class="form-group">
+                                <input type="text" id="comment-name" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="comment-email" placeholder="Email (opsional)">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="comment-message" placeholder="Tulis pesan atau komentar Anda..." rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Kirim Komentar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="comments-list-section" data-aos="fade-left">
+                    <h3>Komentar Terbaru</h3>
+                    <div id="comments-list" class="comments-list">
+                        <!-- Comments will be loaded here -->
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="profile-item">
-            <img src="img/profile/intan.jpg" alt="Foto Siswa">
-            <div class="profile-info">
-                <h3>Intan Nur'aini</h3>
-                <p>orang bilang tidak bisa hidup tanpa cinta,menurut saya tidak punya duit itu berbahaya pake bngett.</p>
-                <a href="https://www.instagram.com/_hahaintann?igsh=emRxeXJiN29iajJx" target="_blank" class="social-link">
-                    <i class="fab fa-instagram"></i> FOLLOW ME
-                </a>
-            </div>
-        </div>
-        
-        <div class="profile-item">
-            <img src="img/profile/selvi.jpg" alt="Foto Siswa">
-            <div class="profile-info">
-                <h3>Shelvia Urbach</h3>
-                <p>Web Developer.</p>
-                <a href="https://www.instagram.com/s_sellviiaa" target="_blank" class="social-link">
-                    <i class="fab fa-instagram"></i> FOLLOW ME
-                </a>
-            </div>
-        </div>
-        
-        <div class="profile-item">
-            <img src="img/profile/ranggis.jpeg" alt="Foto Siswa">
-            <div class="profile-info">
-                <h3>Ranggis Viranda</h3>
-                <p>"Setiap langkah yang kamu ambil adalah bagian dari cerita indah yang sedang kamu tulis."</p>
-                <a href="https://instagram.com/ranggisviranda" target="_blank" class="social-link">
-                    <i class="fab fa-instagram"></i> FOLLOW ME
-                </a>
-            </div>
-        </div>
-        
-        
-        <!-- More profile items can be added here -->
-    </div>
-</section>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Hubungi Kami</h2>
-        <div data-aos="fade-right" class="social-links">
-            <a href="https://instagram.com/class_gsi68a" target="_blank" class="social-link">
-                <i class="fab fa-instagram"></i>
-                <span>@class_gsi68a</span>
-            </a>
-            <a href="https://palcomtech.ac.id" target="_blank" class="social-link">
-                <i class="fas fa-globe"></i>
-                <span>Website Palcomtech</span>
-            </a>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-subtitle">Mari terhubung dengan kami</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card" data-aos="fade-up">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Follow akun kelas kami</p>
+                    <a href="https://instagram.com/class_gsi68a" target="_blank" class="btn btn-outline">
+                        @class_gsi68a
+                    </a>
+                </div>
+                
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Website Kampus</h3>
+                    <p>Kunjungi website resmi</p>
+                    <a href="https://palcomtech.ac.id" target="_blank" class="btn btn-outline">
+                        palcomtech.ac.id
+                    </a>
+                </div>
+                
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Kirim pesan langsung</p>
+                    <a href="mailto:gsi68a@palcomtech.ac.id" class="btn btn-outline">
+                        gsi68a@palcomtech.ac.id
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p>&copy; 2025 Class GSI 68A - Palcomtech Baturaja</p>
-                <p>Last Updated: 21 Januari 2025</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>GSI 68A</h3>
+                            <span>Palcomtech Baturaja</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Bersama menggapai masa depan di era digital dengan semangat belajar dan berkarya.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#profiles">Profil</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Baturaja, Sumatera Selatan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@class_gsi68a</span>
+                    </div>
+                </div>
             </div>
-            <div class="footer-quote">
-                <p>"Bersama Menggapai Masa Depan di Era Digital"</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Class GSI 68A - Palcomtech Baturaja. All rights reserved.</p>
+                <p class="footer-quote">"Bersama Menggapai Masa Depan di Era Digital"</p>
             </div>
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
